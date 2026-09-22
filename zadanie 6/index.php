@@ -48,4 +48,38 @@ function czypierwsza(int $n): bool{
     }
     return true;
 }
+
+
+
+
+function obliczmin(array $liczby){
+    $min = $liczby[0];
+    foreach ($liczby as $liczba){
+        if($liczba < $min){
+            $min = $liczba;
+        }
+    }
+    return $min;
+}
+function obliczMax(array $liczby){
+    $max = $liczby[0];
+    foreach($liczby as $liczba){
+        if($liczba > $max){
+            $max = $liczba;
+        }
+    }
+    return $max;
+}
+function obliczSrednia(array $liczby){
+    $suma = 0;
+    $ilosc = 0;
+    foreach($liczby as $liczba){
+        $suma = $suma + $liczba;
+        $ilosc++;
+    }
+    return $suma / $ilosc;
+}
+$liczby = [5,10,15,20,25];
+
+echo "minimum: "
 ?>
