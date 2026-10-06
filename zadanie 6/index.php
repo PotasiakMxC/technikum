@@ -82,4 +82,61 @@ function obliczSrednia(array $liczby){
 $liczby = [5,10,15,20,25];
 
 echo "minimum: "
+
+//praca domowa
+
+function obliczSume(array $liczby)
+{
+    $suma = 0;
+
+    foreach ($liczby as $liczba) {
+        $suma += $liczba;
+    }
+
+    return $suma;
+}
+
+function obliczStatystyki(array $liczby)
+{
+    $suma = obliczSume($liczby);
+    $srednia = $suma / count($liczby);
+
+    $min = $liczby[0];
+    $max = $liczby[0];
+
+    foreach ($liczby as $liczba) {
+        if ($liczba < $min) {
+            $min = $liczba;
+        }
+
+        if ($liczba > $max) {
+            $max = $liczba;
+        }
+    }
+
+    return [
+        "min" => $min,
+        "max" => $max,
+        "suma" => $suma,
+        "srednia" => $srednia
+    ];
+}
+
+
+// Podane liczby
+$liczby = [10, 5, 8, 20, 7];
+
+// Obliczenie statystyk
+$wynik = obliczStatystyki($liczby);
+
+// Wyświetlenie wyników
+echo "Liczby: ";
+print_r($liczby);
+
+echo "Najmniejsza liczba: " . $wynik["min"] . PHP_EOL;
+echo "Najwieksza liczba: " . $wynik["max"] . PHP_EOL;
+echo "Suma: " . $wynik["suma"] . PHP_EOL;
+echo "Srednia: " . $wynik["srednia"] . PHP_EOL;
+
+
 ?>
