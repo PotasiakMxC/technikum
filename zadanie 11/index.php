@@ -10,6 +10,37 @@
         <label for="name">Imie: </label>
         <input type="text" id="name" name="name"><br>
 
+        <label for="age">Wiek: </label>
+        <input type="Number" id="age"><br>
+
+        <label for="password">Hasło: </label>
+        <input type="text" id="password" name="password"><br>
+
+        <label for="mail">E-mail: </label>
+        <input type="text" id="mail" name="Mail"><br>
+
+        <input type="checkbox" name="accepted" value="true">Akceptuje regulamin <br>
+    
+        <input type="submit" value="Zajerestruj sie">
+    </form>
+</body>
+</html>
+
+<?php
+    $imie = $_GET["name"];
+    $age = $_GET["age"];
+    $password = $_GET["password"];
+    $mail = $_GET["mail"];
+    
+    if($imie < strlen($imie) && strlen($imie) == 3){
+        echo "za krótko";
+    }
+
+?>
+
+<!-- <label for="name">Imie: </label>
+        <input type="text" id="name" name="name"><br>
+
 
         <label for="age">Wiek:</label>
         <input type="number" id="age" name="age"><br>
@@ -21,15 +52,14 @@
             <option value="Normalny">Normalny</option>
         </select><br>
 
-        <input type="submit" value="oblicz sume">
-    </form>
-</body>
-</html>
+        <input type="submit" value="oblicz sume"> -->
 
-<?php
-    $ticket = $_GET['ticket'];
+
+
+
+<!-- $ticket = $_GET['ticket'];
     $age = $_GET['age'];
-    $ticketprice = 0;
+    $ticketprice;
     
     if($ticket == "Normalny" && $age > 7){
         $ticketprice = 30;
@@ -39,5 +69,7 @@
         $ticketprice = 0;
     }
 
-    echo $ticketprice;
-?>
+    echo "Cześć, " . $_GET["name"] . "<br>";
+    echo "twój wiek, " . $age . "<br>";
+    echo "Rodzaj wybranego biletu, " . $_GET["ticket"] . "<br>";
+    echo "Cena do zapłaty, " . $ticketprice . "<br>"; -->
