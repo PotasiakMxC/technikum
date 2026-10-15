@@ -6,8 +6,50 @@
     <title>Zadanie 13 premium max</title>
 </head>
 <body>
-    <script>
+    <h1 id="hello">Witaj na stronie xd</h1>
+    <button id="send">wyślij</button>
 
+    <hr>
+
+    <form>
+        <label for="price">Cena</label>
+        <input type="number" id="price" name="price"> <br>
+
+        <label for="amount">ilość</label>
+        <input type="number" id="amount" name="amount"><br>
+        <button id="button" onclick="">Oblicz</button>
+
+        <p id="result">ODP</p>
+    </form>
+    <hr>
+
+    <input type="number" id="dlugosc"><br>
+    <input type="number" id="szerokosc"><br>
+
+    <input type="number" id="plytka"><br>
+    <button onclick="oblicz()">Oblicz</button>
+    <p id="wynik"></p>
+    <script>
+            //zadanie 1
+            document.getElementById("send").onclick = function(){
+                document.getElementById("hello").textContent = "Udało ci się"
+            }
+            //zadanie 2
+            document.getElementById("button").onclick = function(){
+                let cena = Number(document.getElementById("price").value);
+                let ilosc = Number(document.getElementById("amount").value);
+                let suma = ilosc * cena;
+                document.getElementById("result").textContent ="Suma to: " + suma + " zł";
+            };
+            //zadanie 3
+            function oblicz(){
+                let dlugosc = document.getElementById("dlugosc").value;
+                let szerokosc = document.getElementById("szerokosc").value;
+                let plytka = document.getElementById("plytka").value;
+
+                let powierzchnia = dlugosc * szerokosc;
+                
+            }
     </script>
 </body>
 </html>
