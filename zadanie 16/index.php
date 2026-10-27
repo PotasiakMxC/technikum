@@ -1,5 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+<?php
+    session_start();
+    if(isset($_SESSION['koszyk'])){
+        $_SESSION['koszyk'] = [];
+    }
+    $kom = " ";
+
+    
+?>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -29,7 +38,9 @@
         <button type="submit">Wyślij</button>
     </form>
 
-</body>
+    <h2>Produkty w koszyku </h2>
+
+</body> 
 <?php
 // if(isset($_GET['imie'])){
 //     echo $_GET['imie'];
@@ -39,13 +50,29 @@
 //     echo $_POST['age'];
 // }
 
-if(isset($_POST['product']) && isset($_POST['cena']) && isset($_POST['ilosc'])){
-    $product = $_POST['product'];
-    $cena = $_POST['cena'];
-    $ilosc = $_POST['ilosc'];
-    $zaplata = $cena*$ilosc;
-    echo $_POST["product"] . " ilosc:" . $ilosc . " Cena:" . $cena . " do zapłaty:" . $zaplata;
-}
-
+// if(isset($_POST['product']) && isset($_POST['cena']) && isset($_POST['ilosc'])){
+//     $product = $_POST['product'];
+//     $cena = $_POST['cena'];
+//     $ilosc = $_POST['ilosc'];
+//     $zaplata = $cena*$ilosc;
+//     echo $_POST["product"] . " ilosc:" . $ilosc . " Cena:" . $cena . " do zapłaty:" . $zaplata;
+// }
 ?>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
