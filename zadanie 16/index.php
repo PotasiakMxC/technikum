@@ -7,6 +7,8 @@
     }
     $kom = " ";
 
+    if($_SERVER["REQUEST_METHOD"])
+
     
 ?>
 <head>
