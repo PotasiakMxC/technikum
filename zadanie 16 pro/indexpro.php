@@ -4,6 +4,8 @@
     if(!isset($_SESSION['koszyk'])){
         $_SESSION['koszyk'] = [];
     }
+
+
 ?>
 
 <!DOCTYPE html>
@@ -23,6 +25,9 @@
         <input name='amount' type='text'>
         <input type='submit' value='wyślij'>
     </form>
+    <form method="POST" action="">
+        <input type="submit" value="clean"><br>
+    </form>
 
 <?php
     //utworzenie tablicy z informacjami z formularza 
@@ -36,6 +41,7 @@
     $_SESSION['koszyk'][] = $new_produkt;
     // var_dump($_SESSION['koszyk']);
     echo "<table border=1>";
+    echo "<str><th>Nazwa</th><th>cena</th><th>ilość</th>";
     foreach($_SESSION['koszyk'] as $product){
         echo "<tr>";
         echo "<td>".$product['name']."</td>";
@@ -44,6 +50,7 @@
         echo "</tr>";
     }
     echo "</table>";
+
 ?>
 </body>
 </html>
