@@ -6,7 +6,10 @@ $database = "warehouse";
 
 //Tworzenie połączenia
 $conn = new mysqli($host, $username, $password, $database);
-
+if($conn->connect_error){
+    die("połaczenie nie powiodło się: ". $con->connection_error);
+}
+echo "połączenie się powiodło.";
 
 
 
@@ -34,22 +37,22 @@ $conn = new mysqli($host, $username, $password, $database);
     </form>
 <?php
 
-    $conn; //ustanowienie połączenia, do uzupełnienia
-    if(isset($_POST["name"]) && isset($_POST["price"]) && isset($_POST["amount"])){
-        echo "Nazwa: ".$_POST["name"]."<br>";
-        echo "Cena: ".$_POST["price"]."<br>";
-        echo "Ilość: ".$_POST["amount"]."<br>";
+    // $conn; //ustanowienie połączenia, do uzupełnienia
+    // if(isset($_POST["name"]) && isset($_POST["price"]) && isset($_POST["amount"])){
+    //     echo "Nazwa: ".$_POST["name"]."<br>";
+    //     echo "Cena: ".$_POST["price"]."<br>";
+    //     echo "Ilość: ".$_POST["amount"]."<br>";
 
-        $name = $_POST["name"];
-        $price = $_POST["price"];
-        $amount = $_POST["amount"];
-        //tabela products
-        //Pola: id, name, price, amount
-        $sql = "INSERT INTO Products (name,price,amount) VALUES (?, ?, ?)";
-        $stmt = $conn -> prepare($sql); //przygotowuje na połączeniu zapytanie SQL
+    //     $name = $_POST["name"];
+    //     $price = $_POST["price"];
+    //     $amount = $_POST["amount"];
+    //     //tabela products
+    //     //Pola: id, name, price, amount
+    //     $sql = "INSERT INTO Products (name,price,amount) VALUES (?, ?, ?)";
+    //     $stmt = $conn -> prepare($sql); //przygotowuje na połączeniu zapytanie SQL
         
 
-    }
+    // }
 ?>
 </body>
 </html>
