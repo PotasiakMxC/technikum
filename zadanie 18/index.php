@@ -12,9 +12,6 @@ if($conn->connect_error){
     die("połaczenie nie powiodło się: ". $con->connection_error);
 }
 echo "połączenie się powiodło.";
-
-
-
 ?>
 
 <!DOCTYPE html>
