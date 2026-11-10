@@ -23,6 +23,7 @@
         <input type='submit' value='wyślij'>
     </form>
 <?php
+<<<<<<< HEAD
     if (isset($_POST["id"]) && isset($_POST["name"]) && isset($_POST["price"]) && isset($_POST["amount"])) {
     $name = $_POST["name"];
     $price = $_POST["price"];
@@ -49,6 +50,28 @@
     mysqli_close($conn);
 }
 ?>
+=======
+    if(isset($_POST["name"]) && isset($_POST["price"]) && isset($_POST["amount"])){
+        echo "Nazwa: ".$_POST["name"]."<br>";
+        echo "Cena: ".$_POST["price"]."<br>";
+        echo "Ilość: ".$_POST["amount"]."<br>";
+
+        $name = $_POST["name"];
+        $price = $_POST["price"];
+        $amount = $_POST["amount"];
+
+        $sql = "INSERT INTO Products (name,price,amount) 
+        VALUES (".$name.", ".$price.", ".$amount.")";
+        
+        if(mysqli_query($conn, $sql)){
+            echo "udało sie dodać rekord!";
+        }else{
+            echo "bluescreenie panie Heniu: ". mysqli_error($conn);
+        }
+
+        mysqli_close($conn);
+    }
+>>>>>>> origin/main
 ?>
 </body>
 </html>
