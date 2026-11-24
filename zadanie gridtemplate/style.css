@@ -1,0 +1,36 @@
+.container {
+    display: grid;
+    min-height: 100vh;
+    grid-template-columns: 25% 50% 25%;
+
+    grid-template-areas: 
+        "header header header"
+        "nav main aside"
+        "nav main aside"
+        "footer footer footer";
+}
+
+.header {
+    grid-area: header;
+    background-color: aqua;
+}
+
+.nav {
+    grid-area: nav;
+    background-color: blueviolet;
+}
+
+.main {
+    grid-area: main;
+    background-color: brown;
+}
+
+.aside {
+    grid-area: aside;
+    background-color: aquamarine;
+}
+
+.footer {
+    grid-area: footer;
+    background-color: blue;
+}
