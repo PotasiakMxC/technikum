@@ -6,15 +6,33 @@
     <title>zadanie 24-Java script</title>
 </head>
 <body>
-    <input type="number" id="n">
-    <button onclick="Oblicz()">Generuj</button>
+    <input id="n" type="number">
+    <button onclick="generuj()">Generuj</button>
     <div id="tabela"></div>
     <script>
-        function Oblicz(){
-            let n = Number(document.getElementById("n")).value;
-            let blok = document.getElementById("tabela");
-            
+        function generuj(){
+        let n = document.getElementById("n").value;
+        let div = document.getElementById("tabela");
+        if(n<1 || n > 10){
+            div.textContent = "Podaj liczbe od 1 do 10";
+            return;
         }
+        div.innerHTML = "";
+        let tabela = document.createElement("table");
+        for(let i = 0; i < n; i++){
+            let wiersz = document.createElement("tr");
+            for(let j = 1; j < n;j++){
+                let komorka = document.createElement("td");
+                komorka.textContent = (i*j);
+                if(i == j){
+                    komorka.style.backgroundColor="LightBlue";
+                }
+                wiersz.appendChild(komorka);
+            }
+            tabela.appendChild(wiersz);
+        }
+        div.appendChild(tabela);
+    }
     </script>
 </body>
 </html>
